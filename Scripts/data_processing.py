@@ -3,6 +3,11 @@
 # This is the full script for obtaining the train images for CheXpert, processing them for use in 
 # Google ViT-16-21k base model, and saving into Arrow Dataset objects.
 
+# The script attempts to apply all transforms to the data and then save in one large Arrow Dataset.
+# This fails because the necessary file storage is 50 GB. 
+
+# Use batching instead!!
+
 # However, this script failed on the Caltech HPC after computing the image transforms.
 
 # Therefore, to adapt to your needs, you may need to break up this code, us save checkpoints, and load in
