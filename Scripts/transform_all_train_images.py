@@ -1,9 +1,13 @@
-# This script creates the batched data of PyTorch transformed input images for use in the Google ViT-16-21k
+# This script uses PyTorch transforms to transform input images for use in the Google ViT-16-21k
 # vision transformer model.
 
 # The file produced is the `transformed_inputs.npy` file, which will be loaded into the 
 # `batch_formatted_train_images.py` script to then wrap into an Arrow Dataset, with pixel values in torch 
 # tensors and labels in lists.
+
+# The output of this script is a .npy file containing transformed pixel values and ground truth labels.
+# The images are modified such that each image is resized to 224x224 through bilinear interpolation, put into RGB channels, and pixel intensity is
+# normalized such that the mean and standard deviation in pixel intensities is .5 across all channels.
 
 print('Importing necessary libraries...')
 
