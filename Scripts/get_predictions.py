@@ -61,3 +61,18 @@ def get_discrete_preds(image_probs):
 
     return output_labels
 
+classes = [
+    'Cardiomegaly',
+    'Enlarged Cardiomediastinum',
+    'Fracture',
+    'Lung Opacity',
+    'No Finding',
+    'Pleural Effusion',
+    'Pleural Other',
+    'Pneumonia',
+    'Support Devices',
+]
+
+# Get a data frame in the shape of number of validation images x 10.
+# Make sure to get the Id values from the `test.csv` file on the HPC which matches the patient ID to the data - 
+# it is not just np.arange(0, len(val_data), 1), it is a bunch of random integers 
