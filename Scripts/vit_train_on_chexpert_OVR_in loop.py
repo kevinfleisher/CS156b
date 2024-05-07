@@ -147,7 +147,11 @@ for i, name in enumerate(OVR_names):
         data_collator=batch_sampler,
     )
 
-    # torch.clear_cache()
+    print(f'Beginning model run {i+1}...')
+
+    train_results = trainer.train()
+
+    trainer.save_model()
 
 print('All done! Check `models` dir for results.')
 print('Model run 1 corresponds to positive 1 labels, run 2 to 0 labels, and run 3 to -1 labels')
